@@ -55,47 +55,62 @@
       <button class="btn btn-outline-success my-2 my-sm-0 btn_delete" type="submit"><i class="fas fa-ban"></i></button>
     </form>
 
-    <div class="accordion" id="accordionExample">
+    <div class="accordion" id="accordionClient">
       <div class="card">
-        <div class="card-header" id="headingOne">
+        <div class="card-header" id="ClientHeadingOne">
           <h5 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible Group Item #1
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#ClientOne" aria-expanded="true" aria-controls="ClientOne">
+          Collapsible Clients Item #1
           </button>
           </h5>
         </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div id="ClientOne" class="collapse show" aria-labelledby="ClientHeadingOne" data-parent="#accordionClient">
         <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <img src="https://picsum.photos/200" alt="img_profil">
+        <h2>Toto Youpi</h2>
+        <i class="fas fa-trash-alt"></i>
+        <i class="fas fa-edit"></i>
+        <p>12 place de la République, 48000 Mende</p>
+        <small><a href="#">Irish Pub</a></small>
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-header" id="headingTwo">
+    <div class="card-header" id="ClientHeadingTwo">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ClientTwo" aria-expanded="false" aria-controls="ClientTwo">
+          Collapsible Clients Item #2
         </button>
       </h5>
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+    <div id="ClientTwo" class="collapse" aria-labelledby="ClientHeadingTwo" data-parent="#accordionClient">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <img src="https://picsum.photos/200" alt="img_profil">
+        <h2>Toto Youpi</h2>
+        <i class="fas fa-trash-alt"></i>
+        <i class="fas fa-edit"></i>
+        <p>12 place de la République, 48000 Mende</p>
+        <small><a href="#">Irish Pub</a></small>
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-header" id="headingThree">
+    <div class="card-header" id="ClientHeadingThree">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ClientThree" aria-expanded="false" aria-controls="ClientThree">
+          Collapsible Clients Item #3
         </button>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div id="ClientThree" class="collapse" aria-labelledby="ClientHeadingThree" data-parent="#accordionClient">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <img src="https://picsum.photos/200" alt="img_profil">
+        <h2>Toto Youpi</h2>
+        <i class="fas fa-trash-alt"></i>
+        <i class="fas fa-edit"></i>
+        <p>12 place de la République, 48000 Mende</p>
+        <small><a href="#">Irish Pub</a></small>
       </div>
     </div>
   </div>
@@ -115,45 +130,60 @@
     </form>
     <div class="accordion" id="accordionExample">
   <div class="card">
-    <div class="card-header" id="headingOne">
+    <div class="card-header" id="EntrepriseHeadingOne">
       <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible Group Item #1
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#EntrepriseOne" aria-expanded="true" aria-controls="EntrepriseOne">
+          Collapsible Entreprise Item #1
         </button>
       </h5>
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="EntrepriseOne" class="collapse show" aria-labelledby="EntrepriseHeadingOne" data-parent="#accordionExample">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <img src="https://picsum.photos/200" alt="img_profil">
+        <h2>Conseil départemental de la Lozère</h2>
+        <i class="fas fa-trash-alt"></i>
+        <i class="fas fa-edit"></i>
+        <p>12 place de la République, 48000 Mende</p>
+        <small><a href="#">Toto Youpi</a></small>
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-header" id="headingTwo">
+    <div class="card-header" id="EntrepriseHeadingTwo">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#EntrepriseTwo" aria-expanded="false" aria-controls="EntrepriseTwo">
+          Collapsible Entreprise Item #2
         </button>
       </h5>
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+    <div id="EntrepriseTwo" class="collapse" aria-labelledby="EntrepriseHeadingTwo" data-parent="#accordionExample">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <img src="https://picsum.photos/200" alt="img_profil">
+        <h2>Conseil départemental de la Lozère</h2>
+        <i class="fas fa-trash-alt"></i>
+        <i class="fas fa-edit"></i>
+        <p>12 place de la République, 48000 Mende</p>
+        <small><a href="#">Toto Youpi</a></small>
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-header" id="headingThree">
+    <div class="card-header" id="EntrepriseHeadingThree">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#EntrepriseThree" aria-expanded="false" aria-controls="EntrepriseThree">
+          Collapsible Entreprise Item #3
         </button>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div id="EntrepriseThree" class="collapse" aria-labelledby="EntrepriseHeadingThree" data-parent="#accordionExample">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <img src="https://picsum.photos/200" alt="img_profil">
+        <h2>Conseil départemental de la Lozère</h2>
+        <i class="fas fa-trash-alt"></i>
+        <i class="fas fa-edit"></i>
+        <p>12 place de la République, 48000 Mende</p>
+        <small><a href="#">Toto Youpi</a></small>
       </div>
     </div>
   </div>

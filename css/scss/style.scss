@@ -14,9 +14,25 @@ h1 {
   .form-inline {
     .form-control {
       width: 85%;
+      margin: 1rem 0;
     }
     .btn_search {
       margin: 0 2rem;
     }
+  }
+}
+
+
+.card-body{
+  img{
+    float: left;
+    margin-right: 2rem;
+  }
+  i,h2{
+    display: inline-block;
+  }
+  i{
+    float: right;
+    margin-right: 1rem;
   }
 }

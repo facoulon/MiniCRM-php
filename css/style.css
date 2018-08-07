@@ -7,8 +7,18 @@ h1 {
   text-align: center; }
 
 .tab-pane .form-inline .form-control {
-  width: 85%; }
+  width: 85%;
+  margin: 1rem 0; }
 .tab-pane .form-inline .btn_search {
   margin: 0 2rem; }
+
+.card-body img {
+  float: left;
+  margin-right: 2rem; }
+.card-body i, .card-body h2 {
+  display: inline-block; }
+.card-body i {
+  float: right;
+  margin-right: 1rem; }
 
 /*# sourceMappingURL=style.css.map */

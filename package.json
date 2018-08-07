@@ -1,7 +1,6 @@
 {
   "name": "2048",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +11,14 @@
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facoulon/MiniCRM-php.git"
+  },
+  "bugs": {
+    "url": "https://github.com/facoulon/MiniCRM-php/issues"
+  },
+  "homepage": "https://github.com/facoulon/MiniCRM-php#readme",
+  "description": ""
 }
