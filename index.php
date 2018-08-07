@@ -55,70 +55,33 @@
       <button class="btn btn-outline-success my-2 my-sm-0 btn_delete" type="submit"><i class="fas fa-ban"></i></button>
     </form>
 
+
     <div class="accordion" id="accordionClient">
+<?php
+    $dbh = new PDO('mysql:host=localhost;dbname=mini-CRM', 'admin', 'plop');
+    foreach($dbh->query('SELECT * from client') as $row) : ?>
       <div class="card">
-        <div class="card-header" id="ClientHeadingOne">
+        <div class="card-header" id="ClientHeading <?php echo $row["id"] ?>">
           <h5 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#ClientOne" aria-expanded="true" aria-controls="ClientOne">
-          Collapsible Clients Item #1
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#Client<?php echo $row["id"] ?>" aria-expanded="true" aria-controls="ClientOne">
+          <?php echo $row["prenom"]." ".$row["nom"]; ?>
           </button>
           </h5>
         </div>
 
-        <div id="ClientOne" class="collapse show" aria-labelledby="ClientHeadingOne" data-parent="#accordionClient">
+        <div id="Client<?php echo $row["id"] ?>" class="collapse" aria-labelledby="ClientHeading<?php echo $row["id"] ?>" data-parent="#accordionClient">
         <div class="card-body">
-        <img src="https://picsum.photos/200" alt="img_profil">
-        <h2>Toto Youpi</h2>
+        <img src="<?php echo $row["photo"] ?>" alt="img_profil">
+        <h2><?php echo $row["prenom"]." ".$row["nom"]; ?></h2>
         <i class="fas fa-trash-alt"></i>
         <i class="fas fa-edit"></i>
-        <p>12 place de la République, 48000 Mende</p>
-        <small><a href="#">Irish Pub</a></small>
+        <p><?php echo $row["adresse"]; ?></p>
+        <?php $ligne = $dbh->query('SELECT * from entreprise where id='.$row["entreprise_id"])->fetch(); ?>
+        <small><a href="#"><?php echo $ligne["nom"]; ?></a></small>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header" id="ClientHeadingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ClientTwo" aria-expanded="false" aria-controls="ClientTwo">
-          Collapsible Clients Item #2
-        </button>
-      </h5>
-    </div>
-    <div id="ClientTwo" class="collapse" aria-labelledby="ClientHeadingTwo" data-parent="#accordionClient">
-      <div class="card-body">
-        <img src="https://picsum.photos/200" alt="img_profil">
-        <h2>Toto Youpi</h2>
-        <i class="fas fa-trash-alt"></i>
-        <i class="fas fa-edit"></i>
-        <p>12 place de la République, 48000 Mende</p>
-        <small><a href="#">Irish Pub</a></small>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="ClientHeadingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ClientThree" aria-expanded="false" aria-controls="ClientThree">
-          Collapsible Clients Item #3
-        </button>
-      </h5>
-    </div>
-    <div id="ClientThree" class="collapse" aria-labelledby="ClientHeadingThree" data-parent="#accordionClient">
-      <div class="card-body">
-        <img src="https://picsum.photos/200" alt="img_profil">
-        <h2>Toto Youpi</h2>
-        <i class="fas fa-trash-alt"></i>
-        <i class="fas fa-edit"></i>
-        <p>12 place de la République, 48000 Mende</p>
-        <small><a href="#">Irish Pub</a></small>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
+  <?php endforeach; ?>
   </div>
 
 
@@ -129,6 +92,7 @@
       <button class="btn btn-outline-success my-2 my-sm-0 btn_delete" type="submit"><i class="fas fa-ban"></i></button>
     </form>
     <div class="accordion" id="accordionExample">
+
   <div class="card">
     <div class="card-header" id="EntrepriseHeadingOne">
       <h5 class="mb-0">
