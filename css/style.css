@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+  margin: 3rem 0; }
+
+.nav-pills li {
+  width: 50%;
+  text-align: center; }
+
+.tab-pane .form-inline .form-control {
+  width: 85%; }
+.tab-pane .form-inline .btn_search {
+  margin: 0 2rem; }
+
+/*# sourceMappingURL=style.css.map */
