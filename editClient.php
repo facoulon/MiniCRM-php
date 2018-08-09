@@ -14,7 +14,7 @@
 <body>
 
 <h1>AJOUT CLIENT</h1>
-<form class="" action="addClient.php" method="post">
+<form class="" action="editClient.php" method="post">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputNom">Nom</label>
@@ -45,13 +45,10 @@
   <button type="submit" name="submit" class="btn btn-primary">Ajouter</button>
 </form>
 
-
 <?php if (isset($_POST['submit'])) {
-  $photo = "https://picsum.photos/200?random";
-  $lineADD = $dbh->prepare("INSERT INTO client (id ,nom , prenom, photo, adresse, entreprise_id) VALUES (null, :nom , :prenom , :photo, :adresse, :entreprise_id )");
+  $lineADD = $dbh->prepare("INSERT INTO client (id ,nom , prenom, adresse, entreprise_id) VALUES (null, :nom , :prenom , :adresse, :entreprise_id )");
   $lineADD->bindParam(':nom',$_POST["nom"]);
   $lineADD->bindParam(':prenom',$_POST["prenom"]);
-  $lineADD->bindParam(':photo', $photo);
   $lineADD->bindParam(':adresse',$_POST["adresse"]);
   $lineADD->bindParam(':entreprise_id',$_POST["entreprise_id"]);
   $lineADD->execute();
