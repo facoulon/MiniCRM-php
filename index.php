@@ -24,7 +24,7 @@
           <a class="nav-link" href="#">Listing <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Ajouter Client</a>
+          <a class="nav-link" href="addClient.php">Ajouter Client</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Ajouter Entreprise</a>
