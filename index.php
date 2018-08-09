@@ -66,7 +66,7 @@
         <div class="card-header" id="ClientHeading <?php echo $row["id"] ?>">
           <h5 class="mb-0">
           <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#Client<?php echo $row["id"] ?>" aria-expanded="true" aria-controls="ClientOne">
-          <?php echo $row["prenom"]." ".$row["nom"]; ?>
+            <?php echo $row["prenom"]." ".$row["nom"]; ?>
           </button>
           </h5>
         </div>
@@ -82,7 +82,7 @@
       </div>
     </div>
   </div>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
   </div>
 </div>
 
@@ -96,67 +96,31 @@
       <button class="btn btn-outline-success my-2 my-sm-0 btn_delete" type="submit"><i class="fas fa-ban"></i></button>
     </form>
 
-    <div class="accordion" id="accordionExample">
-
-  <div class="card">
-    <div class="card-header" id="EntrepriseHeadingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#EntrepriseOne" aria-expanded="true" aria-controls="EntrepriseOne">
-          Collapsible Entreprise Item #1
-        </button>
-      </h5>
-    </div>
-
-    <div id="EntrepriseOne" class="collapse show" aria-labelledby="EntrepriseHeadingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        <img src="https://picsum.photos/200" alt="img_profil">
-        <h2>Conseil départemental de la Lozère</h2>
-        <i class="fas fa-trash-alt"></i>
-        <i class="fas fa-edit"></i>
-        <p>12 place de la République, 48000 Mende</p>
-        <small><a href="#">Toto Youpi</a></small>
+        <div class="accordion" id="accordionEntreprise">
+        <?php
+        $dbh = new PDO('mysql:host=localhost;dbname=mini-CRM', 'admin', 'plop');
+        foreach($dbh->query('SELECT * from entreprise') as $row) : ?>
+          <div class="card">
+            <div class="card-header" id="EntrepriseHeading <?php echo $row["id"] ?>">
+              <h5 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#Entreprise<?php echo $row["id"] ?>" aria-expanded="true" aria-controls="EntrepriseOne">
+                <?php echo $row["nom"]; ?>
+              </button>
+              </h5>
+            </div>
+            <div id="Entreprise<?php echo $row["id"] ?>" class="collapse" aria-labelledby="EntrepriseHeading<?php echo $row["id"] ?>" data-parent="#accordionEntreprise">
+            <div class="card-body">
+            <img src="<?php echo $row["photo"] ?>" alt="img_profil">
+            <h2><?php echo $row["nom"]; ?></h2>
+            <i class="fas fa-trash-alt"></i>
+            <i class="fas fa-edit"></i>
+            <p><?php echo $row["adresse"]; ?></p>
+            <?php $ligne = $dbh->query('SELECT * from client where id='.$row["id"])->fetch(); ?>
+            <small><a href="#"><?php echo $ligne["nom"]." ".$ligne["prenom"]; ?></a></small>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="EntrepriseHeadingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#EntrepriseTwo" aria-expanded="false" aria-controls="EntrepriseTwo">
-          Collapsible Entreprise Item #2
-        </button>
-      </h5>
-    </div>
-    <div id="EntrepriseTwo" class="collapse" aria-labelledby="EntrepriseHeadingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        <img src="https://picsum.photos/200" alt="img_profil">
-        <h2>Conseil départemental de la Lozère</h2>
-        <i class="fas fa-trash-alt"></i>
-        <i class="fas fa-edit"></i>
-        <p>12 place de la République, 48000 Mende</p>
-        <small><a href="#">Toto Youpi</a></small>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="EntrepriseHeadingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#EntrepriseThree" aria-expanded="false" aria-controls="EntrepriseThree">
-          Collapsible Entreprise Item #3
-        </button>
-      </h5>
-    </div>
-    <div id="EntrepriseThree" class="collapse" aria-labelledby="EntrepriseHeadingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        <img src="https://picsum.photos/200" alt="img_profil">
-        <h2>Conseil départemental de la Lozère</h2>
-        <i class="fas fa-trash-alt"></i>
-        <i class="fas fa-edit"></i>
-        <p>12 place de la République, 48000 Mende</p>
-        <small><a href="#">Toto Youpi</a></small>
-      </div>
-    </div>
-  </div>
-</div>
+        <?php endforeach; ?>
         </div>
 </div> <!-- div end content tab -->
 </div>
