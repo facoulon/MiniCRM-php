@@ -115,12 +115,13 @@
             <i class="fas fa-trash-alt"></i>
             <i class="fas fa-edit"></i>
             <p><?php echo $row["adresse"]; ?></p>
-            <?php $ligne = $dbh->query('SELECT * from client where id='.$row["id"])->fetch(); ?>
-            <small><a href="#"><?php echo $ligne["nom"]." ".$ligne["prenom"]; ?></a></small>
+            <?php foreach($dbh->query('SELECT * from client where entreprise_id='.$row["id"]) as $ligne ) : ?>
+            <small><a href="#"><?php echo $ligne["nom"]." ".$ligne["prenom"]; ?></a></small><br>
+          <?php endforeach; ?>
           </div>
         </div>
       </div>
-        <?php endforeach; ?>
+    <?php endforeach; ?>
         </div>
 </div> <!-- div end content tab -->
 </div>

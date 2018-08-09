@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php error_reporting(E_ERROR | E_WARNING | E_PARSE); ?>
 <html lang="en" dir="ltr">
 
 <head>
@@ -34,8 +33,7 @@
     </div>
   </nav>
 
-<div class="container"> <!-- DIV CONTAINER -->
-
+<div class="container">
   <h1>Ajouter Entreprise</h1>
 
     <form method="post" action="addEntreprise.php">
@@ -52,13 +50,14 @@
     <?php $dbh = new PDO('mysql:host=localhost;dbname=mini-CRM', 'admin', 'plop');
 
     if (isset($_POST["submit"])) {
-
+  $photo = "https://picsum.photos/200?random";
         // $entrepriseName = $_POST["name"];
         // $entrepriseAdress = $_POST["adress"];
 
 
-        $lineADD = $dbh->prepare("INSERT INTO entreprise (nom , adresse) VALUES (:name, :addr)");
+        $lineADD = $dbh->prepare("INSERT INTO entreprise (nom ,photo , adresse) VALUES (:name, :photo, :addr)");
         $lineADD->bindParam(':name', $_POST["name"]);
+        $lineADD->bindParam(':photo', $photo);
         $lineADD->bindParam(':addr', $_POST["adress"]);
 
          $lineADD->execute();

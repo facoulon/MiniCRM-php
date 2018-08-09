@@ -12,30 +12,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.php">MyCRM</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav m-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Listing <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="addClient.php">Ajouter Client</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="addEntreprise.php">Ajouter Entreprise</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="container">
 
 <h1>AJOUT CLIENT</h1>
-<form class="" action="addClient.php" method="post">
+<form class="" action="editClient.php" method="post">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputNom">Nom</label>
@@ -59,27 +38,24 @@
         <?php
         foreach($dbh->query('SELECT * from entreprise') as $row) : ?>
         <option value='<?php echo $row['id'] ?>'> <?php echo $row['nom'] ?></option>
-        <?php endforeach; ?>
+      <?php endforeach; ?>
       </select>
     </div>
   </div>
   <button type="submit" name="submit" class="btn btn-primary">Ajouter</button>
 </form>
 
-
 <?php if (isset($_POST['submit'])) {
-    $photo = "https://picsum.photos/200?random";
-    $lineADD = $dbh->prepare("INSERT INTO client (id ,nom , prenom, photo, adresse, entreprise_id) VALUES (null, :nom , :prenom , :photo, :adresse, :entreprise_id )");
-    $lineADD->bindParam(':nom', $_POST["nom"]);
-    $lineADD->bindParam(':prenom', $_POST["prenom"]);
-    $lineADD->bindParam(':photo', $photo);
-    $lineADD->bindParam(':adresse', $_POST["adresse"]);
-    $lineADD->bindParam(':entreprise_id', $_POST["entreprise_id"]);
-    $lineADD->execute();
-    header("Location: http://minicrm-php/index.php");
+  $lineADD = $dbh->prepare("INSERT INTO client (id ,nom , prenom, adresse, entreprise_id) VALUES (null, :nom , :prenom , :adresse, :entreprise_id )");
+  $lineADD->bindParam(':nom',$_POST["nom"]);
+  $lineADD->bindParam(':prenom',$_POST["prenom"]);
+  $lineADD->bindParam(':adresse',$_POST["adresse"]);
+  $lineADD->bindParam(':entreprise_id',$_POST["entreprise_id"]);
+  $lineADD->execute();
+  header("Location: http://minicrm-php/index.php");
 } ?>
 
-</div>
+
 
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
