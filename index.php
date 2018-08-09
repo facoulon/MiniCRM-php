@@ -47,17 +47,19 @@
         <a class="nav-link" id="pills-entreprises-tab" data-toggle="pill" href="#pills-entreprises" role="tab" aria-controls="pills-entreprises" aria-selected="false">Entreprises()</a>
       </li>
     </ul>
+
     <div class="tab-content" id="pills-tabContent">
+
     <div class="tab-pane fade show active" id="pills-clients" role="tabpanel" aria-labelledby="pills-clients-tab">
+
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0 btn_search" type="submit"><i class="fas fa-search"></i></button>
       <button class="btn btn-outline-success my-2 my-sm-0 btn_delete" type="submit"><i class="fas fa-ban"></i></button>
     </form>
 
-
     <div class="accordion" id="accordionClient">
-<?php
+    <?php
     $dbh = new PDO('mysql:host=localhost;dbname=mini-CRM', 'admin', 'plop');
     foreach($dbh->query('SELECT * from client') as $row) : ?>
       <div class="card">
@@ -68,7 +70,6 @@
           </button>
           </h5>
         </div>
-
         <div id="Client<?php echo $row["id"] ?>" class="collapse" aria-labelledby="ClientHeading<?php echo $row["id"] ?>" data-parent="#accordionClient">
         <div class="card-body">
         <img src="<?php echo $row["photo"] ?>" alt="img_profil">
@@ -83,6 +84,9 @@
   </div>
   <?php endforeach; ?>
   </div>
+</div>
+
+
 
 
   <div class="tab-pane fade" id="pills-entreprises" role="tabpanel" aria-labelledby="pills-entreprises-tab">
@@ -91,6 +95,7 @@
       <button class="btn btn-outline-success my-2 my-sm-0 btn_search" type="submit"><i class="fas fa-search"></i></button>
       <button class="btn btn-outline-success my-2 my-sm-0 btn_delete" type="submit"><i class="fas fa-ban"></i></button>
     </form>
+
     <div class="accordion" id="accordionExample">
 
   <div class="card">
@@ -152,9 +157,8 @@
     </div>
   </div>
 </div>
-  </div>
-</div>
-  </div>
+        </div>
+</div> <!-- div end content tab -->
 </div>
 
 
