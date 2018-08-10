@@ -118,16 +118,19 @@
             <div class="card-body">
             <img src="<?php echo $row["photo"] ?>" alt="img_profil">
             <h2><?php echo $row["nom"]; ?></h2>
+
+            <form class="" action="editEntreprise.php" method="post">
+              <button type="hidden" name="btnEdit" value="<?php echo $row["id"] ?>"><i class="fas fa-edit"></i></button>
+            </form>
             <i class="fas fa-trash-alt"></i>
-            <i class="fas fa-edit"></i>
             <p><?php echo $row["adresse"]; ?></p>
             <?php foreach($dbh->query('SELECT * from client where entreprise_id='.$row["id"]) as $ligne ) : ?>
             <small><a href="#"><?php echo $ligne["nom"]." ".$ligne["prenom"]; ?></a></small><br>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
         </div>
 </div> <!-- div end content tab -->
 </div>
