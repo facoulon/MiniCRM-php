@@ -13,6 +13,28 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.php">MyCRM</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Listing <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="addClient.php">Ajouter Client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="addEntreprise.php">Ajouter Entreprise</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+
+
 <h1>EDIT CLIENT</h1>
 <?php $dbh = new PDO('mysql:host=localhost;dbname=mini-CRM', 'admin', 'plop');?>
 
@@ -32,7 +54,6 @@
 <?php $client = $dbh->query('SELECT * from client where id='.$_POST["id_client"])->fetch(); ?>
 
 <form class="" action="editClient.php" method="post">
-  <?php echo $client["id"] ?>
   <input type="text" name="client_id" value="<?php echo $client["id"] ?>" hidden>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -53,7 +74,7 @@
       <label for="inputEntreprise">Entreprise</label>
       <select id="inputEntreprise" name="entreprise_id" class="form-control">*
         <?php foreach($dbh->query('SELECT * from entreprise') as $row) : ?>
-            <?php if ($row['id'] == $client["entreprise_id"])  { ?>
+            <?php if ($row['id'] == $client["entreprise_id"]) { ?>
               <option selected value="<?php echo $client["entreprise_id"] ?>"><?php echo $row['nom'] ?></option>
             <?php } else { ?>
               <option value='<?php echo $row['id'] ?>'> <?php echo $row['nom'] ?></option>
@@ -64,7 +85,7 @@
   </div>
   <button type="submit" name="submit" class="btn btn-primary">Edit</button>
 </form>
-
+  </div>
 <?php } ?>
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
