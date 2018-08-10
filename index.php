@@ -75,7 +75,12 @@
         <img src="<?php echo $row["photo"] ?>" alt="img_profil">
         <h2><?php echo $row["prenom"]." ".$row["nom"]; ?></h2>
         <i class="fas fa-trash-alt"></i>
-        <i class="fas fa-edit"></i>
+
+        <form class="" action="editClient.php" method="post">
+          <input type="text" name="id_client" id="id_client" value="<?php echo $row["id"] ?>" hidden>
+          <button type="submit" name="button"><i class="fas fa-edit"></i></button>
+        </form>
+
         <p><?php echo $row["adresse"]; ?></p>
         <?php $ligne = $dbh->query('SELECT * from entreprise where id='.$row["entreprise_id"])->fetch(); ?>
         <small><a href="#"><?php echo $ligne["nom"]; ?></a></small>
@@ -92,6 +97,7 @@
   <div class="tab-pane fade" id="pills-entreprises" role="tabpanel" aria-labelledby="pills-entreprises-tab">
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
       <button class="btn btn-outline-success my-2 my-sm-0 btn_search" type="submit"><i class="fas fa-search"></i></button>
       <button class="btn btn-outline-success my-2 my-sm-0 btn_delete" type="submit"><i class="fas fa-ban"></i></button>
     </form>
