@@ -13,6 +13,19 @@
 
 <body>
 
+<?php $dbh = new PDO('mysql:host=localhost;dbname=mini-CRM', 'admin', 'plop'); ?>
+
+  <?php if (isset($_POST["Del_client"])) {
+  $del_c = $dbh->prepare("DELETE FROM client where id=".$_POST["id_client"]);
+  $del_c-> execute();
+  } ?>
+  <?php if (isset($_POST["Del_entreprise"])) {
+  $del_e = $dbh->prepare("DELETE FROM entreprise where id=".$_POST["id_entreprise"]);
+  $del_e-> execute();
+  } ?>
+
+
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">MyCRM</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,9 +72,8 @@
     </form>
 
     <div class="accordion" id="accordionClient">
-    <?php
-    $dbh = new PDO('mysql:host=localhost;dbname=mini-CRM', 'admin', 'plop');
-    foreach($dbh->query('SELECT * from client') as $row) : ?>
+
+  <?php  foreach($dbh->query('SELECT * from client') as $row) : ?>
       <div class="card">
         <div class="card-header" id="ClientHeading <?php echo $row["id"] ?>">
           <h5 class="mb-0">
@@ -74,7 +86,11 @@
         <div class="card-body">
         <img src="<?php echo $row["photo"] ?>" alt="img_profil">
         <h2><?php echo $row["prenom"]." ".$row["nom"]; ?></h2>
-        <i class="fas fa-trash-alt"></i>
+
+        <form class="" action="index.php" method="post">
+          <input type="text" name="id_client" id="id_client" value="<?php echo $row["id"] ?>" hidden>
+          <button type="submit" name="Del_client"><i class="fas fa-trash-alt"></i></button>
+        </form>
 
         <form class="" action="editClient.php" method="post">
           <input type="text" name="id_client" id="id_client" value="<?php echo $row["id"] ?>" hidden>
@@ -90,8 +106,6 @@
     <?php endforeach; ?>
   </div>
 </div>
-
-
 
 
   <div class="tab-pane fade" id="pills-entreprises" role="tabpanel" aria-labelledby="pills-entreprises-tab">
@@ -118,6 +132,11 @@
             <div class="card-body">
             <img src="<?php echo $row["photo"] ?>" alt="img_profil">
             <h2><?php echo $row["nom"]; ?></h2>
+
+            <form class="" action="index.php" method="post">
+              <input type="text" name="id_entreprise" id="id_entreprise" value="<?php echo $row["id"] ?>" hidden>
+              <button type="submit" name="Del_entreprise"><i class="fas fa-trash-alt"></i></button>
+            </form>
 
             <form class="" action="editEntreprise.php" method="post">
               <button type="hidden" name="btnEdit" value="<?php echo $row["id"] ?>"><i class="fas fa-edit"></i></button>
